@@ -1,4 +1,4 @@
-<% if (defined? SpreeMultiDomain and Spree::Salecycle::Config["salecycle_#{current_store.code}_client_id".to_sym]) or Spree::Salecycle::Config[:salecycle_client_id] %>
+<% if ((defined? SpreeMultiDomain or defined? SpreeMultiDomainMinimal) and Spree::Salecycle::Config["salecycle_#{current_store.code}_client_id".to_sym]) or Spree::Salecycle::Config[:salecycle_client_id] %>
   <% sc = Spree::SalecycleConnection.new(@order, spree_current_user, defined?(current_store) ? current_store : nil) %>
 
   <%= javascript_tag do %>
